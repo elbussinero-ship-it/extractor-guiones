@@ -24,9 +24,9 @@ def obtener_video_id(entrada):
     return entrada
 
 
-# -----------------------
-# EXTRACTOR
-# -----------------------
+# ==================================
+# EXTRACTOR DE TRANSCRIPCIONES
+# ==================================
 
 st.header("📄 Extraer Transcripción")
 
@@ -65,13 +65,13 @@ if st.button("Extraer Transcripción"):
         st.error(str(e))
 
 
-# -----------------------
+# ==================================
 # GENERADOR DE GANCHOS
-# -----------------------
+# ==================================
 
 st.divider()
 
-st.header("🔥 Generador de Ganchos Virales")
+st.header("🔥 Biblioteca de Ganchos Virales")
 
 tema = st.text_input(
     "Escribe un tema",
@@ -82,7 +82,13 @@ if st.button("Generar Ganchos"):
 
     if tema:
 
-        ganchos = [
+        st.success("✅ Ganchos generados")
+
+        # CURIOSIDAD
+
+        st.subheader("🧠 Curiosidad")
+
+        curiosidad = [
 
             f"Lo que no te han contado de {tema}.",
 
@@ -92,33 +98,86 @@ if st.button("Generar Ganchos"):
 
             f"Existe un detalle sobre {tema} que casi nadie menciona.",
 
-            f"Lo que descubrí investigando sobre {tema}.",
+            f"Lo que descubrí investigando sobre {tema}."
+        ]
 
-            f"Muchos creen esto sobre {tema}.",
+        for i, gancho in enumerate(curiosidad, 1):
 
-            f"¿Sabías esto sobre {tema}?",
+            st.write(f"{i}. {gancho}")
+
+        # ERRORES
+
+        st.subheader("⚠️ Error común")
+
+        errores = [
 
             f"El error que muchas personas cometen con {tema}.",
 
-            f"3 cosas que quizás no sabías sobre {tema}.",
+            f"Algo que algunas personas hacen mal con {tema}.",
+
+            f"Muchos pasan por alto este detalle sobre {tema}.",
+
+            f"Un hábito relacionado con {tema} que suele generar dudas."
+        ]
+
+        for i, gancho in enumerate(errores, 1):
+
+            st.write(f"{i}. {gancho}")
+
+        # PREGUNTAS
+
+        st.subheader("❓ Preguntas")
+
+        preguntas = [
+
+            f"¿Sabías esto sobre {tema}?",
 
             f"¿Es cierto todo lo que dicen sobre {tema}?",
 
-            f"Lo que algunas personas desconocen sobre {tema}.",
+            f"¿Habías escuchado esto sobre {tema}?",
 
-            f"Hay algo sobre {tema} que podría sorprenderte.",
-
-            f"Este dato sobre {tema} está llamando la atención.",
-
-            f"¿Por qué tantas personas hablan de {tema}?",
-
-            f"Un detalle curioso sobre {tema} que pocos conocen."
-
+            f"¿Por qué tantas personas hablan de {tema}?"
         ]
 
-        st.success("✅ Ganchos generados")
+        for i, gancho in enumerate(preguntas, 1):
 
-        for i, gancho in enumerate(ganchos, start=1):
+            st.write(f"{i}. {gancho}")
+
+        # LISTAS
+
+        st.subheader("📋 Listas")
+
+        listas = [
+
+            f"3 cosas que quizás no sabías sobre {tema}.",
+
+            f"5 datos interesantes sobre {tema}.",
+
+            f"4 detalles poco conocidos sobre {tema}.",
+
+            f"3 razones por las que {tema} llama la atención."
+        ]
+
+        for i, gancho in enumerate(listas, 1):
+
+            st.write(f"{i}. {gancho}")
+
+        # MITOS
+
+        st.subheader("🔍 Mitos")
+
+        mitos = [
+
+            f"Muchos creen esto sobre {tema}.",
+
+            f"Existe una idea muy extendida sobre {tema}.",
+
+            f"No todo lo que se dice sobre {tema} es correcto.",
+
+            f"Un mito frecuente relacionado con {tema}."
+        ]
+
+        for i, gancho in enumerate(mitos, 1):
 
             st.write(f"{i}. {gancho}")
 
